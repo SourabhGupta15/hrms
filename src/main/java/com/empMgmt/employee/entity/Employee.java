@@ -6,6 +6,8 @@ public class Employee {
 	private long salary;
 	private String department;
 	
+	public Employee() {}
+	
 	public Employee(int id, String name, long salary, String department) {
 		this.id = id;
 		this.name = name;
@@ -43,5 +45,15 @@ public class Employee {
 	
 	public void setDepartment(String department) {
 		this.department = department;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee{" +
+				"id = " + id +
+				", name = '" + name + "'" +
+				", salary = " + salary +
+				", department = '" + department + "'" +
+				"}";
 	}
 }
