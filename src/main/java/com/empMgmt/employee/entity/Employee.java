@@ -1,25 +1,35 @@
 package com.empMgmt.employee.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Employee {
-	private int id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;	// Long is a wrapper class so its default value is null
+	
 	private String name;
-	private long salary;
+	private long salary;	// long is a primitive integer data type so its default value is 0
 	private String department;
 	
 	public Employee() {}
 	
-	public Employee(int id, String name, long salary, String department) {
+	public Employee(Long id, String name, long salary, String department) {
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
 		this.department = department;
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
